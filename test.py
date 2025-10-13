@@ -104,7 +104,3 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
             NR.append(sum)
         NM.append(NR)
     return NM
-        
-
-
-
