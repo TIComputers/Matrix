@@ -104,9 +104,3 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
             NR.append(sum)
         NM.append(NR)
     return NM
-        
-    
-
-print(MMS(matrix_4x5 ,matrix_5x4))
-
-
