@@ -81,7 +81,6 @@ def TC(Matrix:list, col:int) -> list:
         columns.append(row[col])
     return columns
 
-
 def MMS(Matrix1:list, Matrix2:list) -> list:
     """ Multiply matrices systematically """
     RC1 = NRC(Matrix1)
@@ -91,16 +90,17 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
             exit(f"Cann`t Multiply matrix -> {RC1} * {RC2}")
 
     NM = [] # new matrix for multiply matrix1 to matrix2
- 
-    for row in Matrix1:
-        NR = [] # new row for add new matrix multiplyed
+
+    for row in Matrix1: # row is a list from Matrix1
+        NR = [] # new row form New Matrix
         for col in range(RC2[1]):
-            COL = TC(Matrix2, col)
+            Col = TC(Matrix2, col)
             sum = 0
-            for i in range(RC1[0]):
+            for i in range(RC1[1]):
                 mul = 0
-                mul = row[i] * COL[i]
+                mul = row[i] * Col[i]
                 sum += mul
             NR.append(sum)
         NM.append(NR)
     return NM
+        
