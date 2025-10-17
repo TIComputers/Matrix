@@ -1,4 +1,3 @@
-from time import time, sleep
 from Examples import *
 
 def ATM(Matrix:list, row:int, col:int) -> int:
@@ -104,3 +103,7 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
         NM.append(NR)
     return NM
         
+        
+        
+if __name__ == "__main__":
+    pass
