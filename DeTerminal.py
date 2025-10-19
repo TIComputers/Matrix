@@ -28,6 +28,7 @@ def TB(Matrix:list) -> bool:
         return False
 
 
+
 def TT(Matrix:list) -> bool:
     """ Triangular top """
     
@@ -54,18 +55,55 @@ def TT(Matrix:list) -> bool:
         return False
         
 
-def DTT():
+
+def D22(Matrix: list) -> int:
     """ Deterministic two by two """
-    pass
+    M1 = Matrix[0][0] * Matrix[1][1]
+    M2 = Matrix[0][1] * Matrix[1][0]
+    
+    DE = M1 - M2
+    return DE    
 
 
-def Minor():
-    pass
 
-
-def Cafactor():
+def Cafactor(row:int, col:int) -> int:
     """ Calculate cafactor """
-    pass
+    a = (row+1) + (col+1)
+    
+    if a % 2 == 0: return 1
+    else : return -1
+        
+
+
+def Minor(Matrix: list, row: int, col: int) -> list:
+    """ Delete selected row and column of numbers """
+    L = len(Matrix)
+    NM = []
+    
+    for i in range(L):
+        if i == row: continue
+        NR = []
+            
+        for j in range(L):
+            if j == col: continue
+            NR.append(Main.ATM(Matrix, i, j))
+                
+        NM.append(NR)
+
+    return NM
 
 
 
+def D33(Matrix: list, row:int =0) -> int:
+    """ Deterministic three by three """
+    D0: int = 0
+    
+    for c in range(3):
+        M0 = Minor(Matrix, row, c)
+        M1 = Cafactor(row, c) * Main.ATM(Matrix, row, c)
+        M2 = M1 * D22(M0)
+        print(M2)
+        
+        D0 += M2
+    return D0
+        
