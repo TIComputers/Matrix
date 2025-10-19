@@ -97,13 +97,17 @@ def Minor(Matrix: list, row: int, col: int) -> list:
 def D33(Matrix: list, row:int =0) -> int:
     """ Deterministic three by three """
     D0: int = 0
-    
-    for c in range(3):
+    ln = len(Matrix)
+    for c in range(ln):
         M0 = Minor(Matrix, row, c)
         M1 = Cafactor(row, c) * Main.ATM(Matrix, row, c)
         M2 = M1 * D22(M0)
-        print(M2)
         
         D0 += M2
     return D0
         
+
+if __name__ == "__main__":
+    pass
+
+    
