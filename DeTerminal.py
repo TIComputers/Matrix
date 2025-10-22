@@ -1,4 +1,6 @@
-import Main
+from fractions import Fraction as F
+import Main 
+
 
 def TB(Matrix:list) -> bool:
     """ Triangular bottom """
@@ -105,6 +107,65 @@ def D33(Matrix: list, row:int =0) -> int:
         
         D0 += M2
     return D0
+        
+
+
+def tranhad(Matrix:list) -> list:
+    
+    LE = len(Matrix)
+    MN = []
+    
+    for i in range(LE):
+        col = Main.TC(Matrix, i)
+        MN.append(col)
+    
+    return MN
+
+
+
+def mul(Matrix:list, num:int) -> list:
+    
+    num = F(num, 1)
+    print(num)
+    MN = []
+    for i in Matrix:
+        NR = []
+        
+        for j in i:
+            a = j * num 
+
+            NR.append(a)
+        MN.append(NR)
+    return MN
+
+
+
+def reverse(Matrix:list) -> list:
+    """ Matrix inverse """
+    
+    det = D33(Matrix)
+    
+    if det == 0:
+        exit(f"det matrix is:{det}")
+        
+    else:
+        MN = []
+        LE = len(Matrix)
+        
+        for i in range(LE):
+            NR = []
+
+            for j in range(LE):
+                d1 = Minor(Matrix, j, i) 
+                d2 = D22(d1)
+                d3 = Cafactor(i, j) * d2
+            
+                NR.append(d3)
+            
+            MN.append(NR)
+
+        det_reaverc = F(1/det)
+        return mul(MN, det_reaverc)    
         
 
 if __name__ == "__main__":
