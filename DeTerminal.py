@@ -164,7 +164,7 @@ def reverse(Matrix:list) -> list:
             
             MN.append(NR)
 
-        det_reaverc = F(1/det)
+        # det_reaverc = F(1/det)
         adj = tranhad(MN)
         return adj
         

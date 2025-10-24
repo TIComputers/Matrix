@@ -80,6 +80,7 @@ def TC(Matrix:list, col:int) -> list:
         columns.append(row[col])
     return columns
 
+
 def MMS(Matrix1:list, Matrix2:list) -> list:
     """ Multiply matrices systematically """
     RC1 = NRC(Matrix1)
@@ -106,5 +107,4 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
         
         
 if __name__ == "__main__":
-    for i in MMS(ex1, ex1):
-        print(i)
+    pass
