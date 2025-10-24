@@ -165,10 +165,11 @@ def reverse(Matrix:list) -> list:
             MN.append(NR)
 
         det_reaverc = F(1/det)
-        return mul(MN, det_reaverc)    
+        adj = tranhad(MN)
+        return adj
         
+
 
 if __name__ == "__main__":
     pass
-
     
