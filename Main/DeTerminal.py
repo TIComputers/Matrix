@@ -63,9 +63,7 @@ def D22(Matrix: list) -> int:
     M1 = Matrix[0][0] * Matrix[1][1]
     M2 = Matrix[0][1] * Matrix[1][0]
     
-    DE = M1 - M2
-    return DE    
-
+    return M1 - M2
 
 
 def Cafactor(row:int, col:int) -> int:
@@ -171,5 +169,5 @@ def reverse(Matrix:list) -> list:
 
 
 if __name__ == "__main__":
-    pass
+    print(Main.MMS(Main.tx, Main.tt))
     
