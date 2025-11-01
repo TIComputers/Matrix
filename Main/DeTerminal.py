@@ -1,6 +1,4 @@
-from fractions import Fraction as F
 import Main 
-
 
 def TB(Matrix:list) -> bool:
     """ Triangular bottom """
@@ -120,24 +118,6 @@ def tranhad(Matrix:list) -> list:
     return MN
 
 
-
-def mul(Matrix:list, num:int) -> list:
-    
-    num = F(num, 1)
-    print(num)
-    MN = []
-    for i in Matrix:
-        NR = []
-        
-        for j in i:
-            a = j * num 
-
-            NR.append(a)
-        MN.append(NR)
-    return MN
-
-
-
 def reverse(Matrix:list) -> list:
     """ Matrix inverse """
     
@@ -159,12 +139,8 @@ def reverse(Matrix:list) -> list:
                 d3 = Cafactor(i, j) * d2
             
                 NR.append(d3)
-            
             MN.append(NR)
-
-        # det_reaverc = F(1/det)
-        adj = tranhad(MN)
-        return adj
+        return tranhad(MN)
         
 
 
