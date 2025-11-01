@@ -166,9 +166,6 @@ def reverse(Matrix:list) -> list:
                 NR.append(d3)
             MN.append(NR)
         adj = tranhad(MN)
-        for i in adj:
-            print(i)
-        print("===================")
         fin = r_final(combo(adj), det)
         return fin
 
