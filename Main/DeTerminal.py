@@ -1,3 +1,4 @@
+from subtraction import Deductions as De
 import Main 
 
 def TB(Matrix:list) -> bool:
@@ -118,6 +119,32 @@ def tranhad(Matrix:list) -> list:
     return MN
 
 
+
+def combo(Matrix:list) -> list:
+    NM = []
+    for i in Matrix:
+        NR = []
+        for j in i:
+            item = [j, 1]
+            
+            NR.append(item)
+        NM.append(NR)
+    return NM
+
+
+def r_final(Matrix:list, det:int) -> list:
+    r_det = [1, det]
+    NM = []
+    for items in Matrix:
+        NR = []
+        for item in items:
+            re = De.multiplication(r_det, item)
+            
+            NR.append(re)
+        NM.append(NR)
+    return NM
+
+
 def reverse(Matrix:list) -> list:
     """ Matrix inverse """
     
@@ -140,9 +167,12 @@ def reverse(Matrix:list) -> list:
             
                 NR.append(d3)
             MN.append(NR)
-        return tranhad(MN)
-        
-
+        adj = tranhad(MN)
+        for i in adj:
+            print(i)
+        print("===================")
+        fin = r_final(combo(adj), det)
+        return fin
 
 if __name__ == "__main__":
     pass
