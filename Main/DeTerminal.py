@@ -106,7 +106,6 @@ def D33(Matrix: list, row:int =0) -> int:
     return D0
         
 
-
 def tranhad(Matrix:list) -> list:
     
     LE = len(Matrix)
@@ -117,7 +116,6 @@ def tranhad(Matrix:list) -> list:
         MN.append(col)
     
     return MN
-
 
 
 def combo(Matrix:list) -> list:
