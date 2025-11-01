@@ -169,5 +169,5 @@ def reverse(Matrix:list) -> list:
 
 
 if __name__ == "__main__":
-    print(Main.MMS(Main.tx, Main.tt))
+    pass
     

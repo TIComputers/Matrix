@@ -107,4 +107,5 @@ def MMS(Matrix1:list, Matrix2:list) -> list:
         
         
 if __name__ == "__main__":
-    pass
+    print(MMS(tt, ty))
+    
