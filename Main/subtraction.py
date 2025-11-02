@@ -5,7 +5,7 @@ class Deductions:
         if a[0] < 0 > a[1]:
             a = [abs(a[0]), abs(a[1])]
                  
-        for num in range(2, 9):
+        for num in range(9, 2, -1):
             if a[0] % num == 0 :
                 if a[1] % num == 0:
                     a[0] = int(a[0]/num)

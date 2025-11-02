@@ -169,7 +169,5 @@ def reverse(Matrix:list) -> list:
         return fin
 
 if __name__ == "__main__":
-    for i in reverse(Main.tt):
-        print(i)
     pass
     
