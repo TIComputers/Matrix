@@ -39,5 +39,4 @@ class Deductions:
         
         
 if __name__ == "__main__":
-    print(Deductions.simplify([6, -27]))
     pass
