@@ -63,7 +63,7 @@ def D22(Matrix: list) -> int:
     M2 = Matrix[0][1] * Matrix[1][0]
     
     return M1 - M2
-
+    
 
 def Cafactor(row:int, col:int) -> int:
     """ Calculate cafactor """
@@ -145,7 +145,6 @@ def r_final(Matrix:list, det:int) -> list:
 
 def reverse(Matrix:list) -> list:
     """ Matrix inverse """
-    
     det = D33(Matrix)
     
     if det == 0:
@@ -159,16 +158,18 @@ def reverse(Matrix:list) -> list:
             NR = []
 
             for j in range(LE):
-                d1 = Minor(Matrix, j, i) 
+                d1 = Minor(Matrix, j, i)
                 d2 = D22(d1)
                 d3 = Cafactor(i, j) * d2
             
                 NR.append(d3)
             MN.append(NR)
-        adj = tranhad(MN)
-        fin = r_final(combo(adj), det)
+        # adj = tranhad(MN)
+        fin = r_final(combo(MN), det)
         return fin
 
 if __name__ == "__main__":
+    for i in reverse(Main.tt):
+        print(i)
     pass
     
